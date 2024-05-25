@@ -45,6 +45,13 @@
 			}
 		}
 
+		if(array_filter($errors)){
+			//echo "errors in the form;
+		} else {
+			//echo "No errors in the form;
+			header('Location: index.php');
+		}
+
 	} // end POST check
 
 ?>

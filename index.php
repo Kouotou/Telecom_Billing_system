@@ -52,7 +52,7 @@
 							</ul>
 						</div>
 						<div class="card-action right-align">
-							<a href="#" class="brand-text">More info</a>
+							<a href="details.php?id=<?php echo $subscriber['subs_id']?>" class="brand-text">More info</a>
 						</div>
 					</div>
 				</div>

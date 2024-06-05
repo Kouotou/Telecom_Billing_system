@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Telecom Subscriber Central</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Telecom Subscriber Central</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="subscribers.html">Subscribers</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Reports and Insights</h2>
+            <form action="generate_report.php" method="post">
+                <label for="reportType">Select Report Type:</label>
+                <select id="reportType" name="reportType">
+                    <option value="subscribers">Subscriber List</option>
+                    <option value="services">Service Popularity</option>
+                    <option value="subscribers_per_service">Subscribers Per Service</option>
+                </select>
+                <input type="submit" value="Generate Report">
+            </form>
+            <div id="reportResults">
+                <!-- Report results will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Telecom Subscriber Central. By group 2.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

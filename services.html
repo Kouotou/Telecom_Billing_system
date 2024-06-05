@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Management - Telecom Subscriber Central</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Telecom Subscriber Central</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="subscribers.html">Subscribers</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Service Catalogue Management</h2>
+            <button id="toggleAddServiceForm">Add New Service</button>
+            <div id="addServiceForm" style="display:none;">
+                <form action="add_service.php" method="post">
+                    <label for="serviceName">Service Name:</label>
+                    <input type="text" id="serviceName" name="serviceName" required>
+                    <label for="serviceDescription">Service Description:</label>
+                    <input type="text" id="serviceDescription" name="serviceDescription" required>
+                    <label for="serviceCost">Service Cost:</label>
+                    <input type="number" id="serviceCost" name="serviceCost" required>
+                    <input type="submit" value="Add Service">
+                </form>
+            </div>
+            <h3>Service List</h3>
+            <input type="text" id="searchInput" placeholder="Search services by name or description">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cost</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="serviceTableBody">
+                    <!-- Service entries will be populated here using server-side script -->
+                    <!-- Example row:
+                    <tr>
+                        <td>1</td>
+                        <td>Basic Plan</td>
+                        <td>Basic calling plan</td>
+                        <td>10.00</td>
+                        <td>
+                            <button onclick="editService(1, 'Basic Plan', 'Basic calling plan', 10.00)">Edit</button>
+                            <form action="delete_service.php" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="1">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
+            <div id="editServiceForm" style="display:none;">
+                <h3>Edit Service</h3>
+                <form action="update_service.php" method="post">
+                    <input type="hidden" id="editServiceId" name="id">
+                    <label for="editServiceName">Service Name:</label>
+                    <input type="text" id="editServiceName" name="serviceName" required>
+                    <label for="editServiceDescription">Service Description:</label>
+                    <input type="text" id="editServiceDescription" name="serviceDescription" required>
+                    <label for="editServiceCost">Service Cost:</label>
+                    <input type="number" id="editServiceCost" name="serviceCost" required>
+                    <input type="submit" value="Update Service">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Telecom Subscriber Central. By group 2.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

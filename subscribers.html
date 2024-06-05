@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscriber Management - Telecom Subscriber Central</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Telecom Subscriber Central</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="subscribers.html">Subscribers</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Subscriber Management</h2>
+            <button id="toggleAddSubscriberForm">Add New Subscriber</button>
+            <div id="addSubscriberForm" style="display:none;">
+                <form action="add_subscriber.php" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                    <label for="service">Service Type:</label>
+                    <input type="text" id="service" name="service" required>
+                    <input type="submit" value="Add Subscriber">
+                </form>
+            </div>
+            <h3>Subscriber List</h3>
+            <input type="text" id="searchInput" placeholder="Search by name or phone number">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Service</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="subscriberTableBody">
+                    <!-- Subscriber entries will be populated here using server-side script -->
+                    <!-- Example row: -->
+                    <!--
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>1234567890</td>
+                        <td>123 Elm St.</td>
+                        <td>Internet</td>
+                        <td>
+                            <button onclick="editSubscriber(1, 'John Doe', '1234567890', '123 Elm St.', 'Internet')">Edit</button>
+                            <form action="delete_subscriber.php" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="1">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
+            <div id="editSubscriberForm" style="display:none;">
+                <h3>Edit Subscriber</h3>
+                <form action="update_subscriber.php" method="post">
+                    <input type="hidden" id="editId" name="id">
+                    <label for="editName">Name:</label>
+                    <input type="text" id="editName" name="name" required>
+                    <label for="editPhone">Phone Number:</label>
+                    <input type="text" id="editPhone" name="phone" required>
+                    <label for="editAddress">Address:</label>
+                    <input type="text" id="editAddress" name="address" required>
+                    <label for="editService">Service Type:</label>
+<input type="text" id="editService" name="service" required>
+                    <input type="submit" value="Update Subscriber">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Telecom Subscriber Central. By group 2.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
